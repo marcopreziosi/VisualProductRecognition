@@ -49,6 +49,7 @@ def evaluate(LocalEvalConfig):
 if __name__ == "__main__":
     # change the local config as needed
     class LocalEvalConfig:
-        DATA_FOLDER = './public_dataset'
-
+        #DATA_FOLDER = './public_dataset'
+        DATA_FOLDER = 'development_test_data'
+        
     evaluate(LocalEvalConfig)
