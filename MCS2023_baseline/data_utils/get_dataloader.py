@@ -9,7 +9,7 @@ def get_dataloaders(config):
     :param config:
     :return:
     """
-    print("Preparing train reader...")
+
     train_dataset = dataset.Product10KDataset(
         root=config.dataset.train_prefix, annotation_file=config.dataset.train_list,
         transforms=augmentations.get_train_aug(config)

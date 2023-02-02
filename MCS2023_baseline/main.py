@@ -12,7 +12,7 @@ import utils
 
 from tqdm import tqdm
 
-from data import get_dataloader
+from data_utils import get_dataloader
 from models import models
 from train import train, validation
 from utils import convert_dict_to_tuple

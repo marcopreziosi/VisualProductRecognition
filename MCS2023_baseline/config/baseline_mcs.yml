@@ -4,20 +4,20 @@ outdir: './experiments/'
 num_gpu: 1
 
 dataset:
-    train_prefix: '.../Product10K/train/'
-    train_list: '.../Product10K/train.csv'
-    val_prefix: '.../Product10K/test/'
-    val_list: '.../Product10K/test_kaggletest.csv'
+    train_prefix: '/home/paperspace/VisualProductRecognition/Product10K/train/'
+    train_list: '/home/paperspace/VisualProductRecognition/Product10K/train.csv'
+    val_prefix: '/home/paperspace/VisualProductRecognition/Product10K/test/'
+    val_list: '/home/paperspace/VisualProductRecognition/Product10K/test_kaggletest.csv'
     seed: 42
     num_of_classes: 9691
     input_size: 224
-    batch_size: 256
+    batch_size: 128
     augmentations: 'default'
     augmentations_valid: 'default'
     num_workers: 24
 
 model:
-    arch: 'resnet18'
+    arch: 'resnet50'
 
 train:
     optimizer: 'SGD'
