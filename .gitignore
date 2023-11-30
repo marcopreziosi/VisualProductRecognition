@@ -6,3 +6,4 @@ development_test_data
 Product10K/
 __pycache__/
 experiments/
+submission_model/*

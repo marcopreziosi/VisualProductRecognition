@@ -1,0 +1,47 @@
+exp_name: 'Autoencoder_loss'
+outdir: './experiments/'
+
+num_gpu: 1
+
+dataset:
+    triplete: false
+    group: false
+    contrastive: false
+    contrastive_all: false
+    combinedLoss: false
+    vit: false
+    autoencoder: true
+    train_prefix: '/home/paperspace/visual-product-recognition-2023-starter-kit/Product10KComplete/train_complete_all/'
+    # train_prefix: '/home/paperspace/visual-product-recognition-2023-starter-kit/Product10K/train_origin/'
+    train_list: '/home/paperspace/visual-product-recognition-2023-starter-kit/Product10KComplete/train_complete_all.csv'
+    # train_list: '/home/paperspace/visual-product-recognition-2023-starter-kit/Product10K/train_orig.csv'
+    val_prefix: '/home/paperspace/visual-product-recognition-2023-starter-kit/Product10K/test_origin/'
+    val_list: '/home/paperspace/visual-product-recognition-2023-starter-kit/Product10K/test_contrastive.csv'
+    val_list_triplete: '/home/paperspace/visual-product-recognition-2023-starter-kit/Product10K/test_kaggletest.csv'
+    seed: 42
+    num_of_classes: 9691
+    input_size: 256
+    crop_size: 512
+    batch_size: 64
+    augmentations: 'default'
+    augmentations_valid: 'default'
+    num_workers: 8
+
+model:
+    arch: 'autoencoder'
+
+train:
+    resume: false
+    optimizer: 'Adam'
+    learning_rate: 0.0006
+    momentum: 0.9
+    weight_decay: 0.0001
+    nesterov: false
+    lr_schedule:
+        name: 'StepLR'
+        step_size: 10
+        gamma: 0.1
+    n_epoch: 200
+    label_smoothing: false
+    eps: 0.01
+    freq_vis: 500
